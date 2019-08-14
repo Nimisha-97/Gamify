@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(value="http://ec2-52-66-189-143.ap-south-1.compute.amazonaws.com:3000")
+//@CrossOrigin(value="http://ec2-52-66-189-143.ap-south-1.compute.amazonaws.com:3000")
 @RestController
-@RequestMapping(path="/dash")
+@RequestMapping(path="/dashboard")
 public class RestControllerRulesGamification {
 	@Autowired
 	private RuleRepositoryGamification repository;
@@ -38,7 +38,7 @@ public class RestControllerRulesGamification {
 	  repository.save(game);
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public BeanRulesGamification createGame(@Valid @RequestBody BeanRulesGamification game) {
 		System.out.println("Hemanth");
 		game.set_id(ObjectId.get());
